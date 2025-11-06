@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Code Reviewer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <h1 class="title">⚙️ AI CODE REVIEWER</h1>
+    <p class="subtitle">Analyze • Debug • Optimize — Instantly</p>
+
+    <textarea id="code-input" placeholder="Paste your code here..."></textarea>
+
+    <div class="button-group">
+      <button id="review-btn">🚀 Review Code</button>
+      <button id="clear-btn">🧹 Clear</button>
+    </div>
+
+    <div class="output-section">
+      <div class="output-card summary">
+        <h2>📄 Summary</h2>
+        <div id="summary-output" class="output-box">No summary yet.</div>
+      </div>
+
+      <div class="output-card faults">
+        <h2>❌ Faults / Errors</h2>
+        <div id="faults-output" class="output-box">No faults detected.</div>
+      </div>
+
+      <div class="output-card suggestions">
+        <h2>💡 Suggestions</h2>
+        <div id="suggestions-output" class="output-box">No suggestions yet.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
