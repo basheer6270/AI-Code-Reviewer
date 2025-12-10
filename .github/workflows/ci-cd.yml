@@ -37,7 +37,7 @@ jobs:
       with:
         registry: ghcr.io
         username: basheer6270        # GitHub username
-        password: ${{ secrets.CI_CD_GHCR_TOKEN }}  # repo secret with write:packages
+        password: ${{ secrets.GHCR_PAT  }}  # repo secret with write:packages
 
     - name: Push Docker Image
       run: |
