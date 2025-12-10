@@ -36,8 +36,8 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
-        username: basheer6270
-        password: ${{ secrets.CI_CD_GHCR_TOKEN }}
+        username: basheer6270        # GitHub username
+        password: ${{ secrets.CI_CD_GHCR_TOKEN }}  # repo secret with write:packages
 
     - name: Push Docker Image
       run: |
