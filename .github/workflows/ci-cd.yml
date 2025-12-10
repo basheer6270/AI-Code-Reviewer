@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -23,9 +24,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Lint Test
+    - name: Lint Code
       run: |
-        python -m py_compile app.py
+        pip install flake8
+        flake8 .
 
     - name: Build Docker Image
       run: docker build -t ai-code-reviewer .
@@ -34,10 +36,10 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: basheer6270
+        password: ${{ secrets.CI_CD_GHCR_TOKEN }}
 
     - name: Push Docker Image
       run: |
-        docker tag ai-code-reviewer ghcr.io/${{ github.repository_owner }}/ai-code-reviewer:latest
-        docker push ghcr.io/${{ github.repository_owner }}/ai-code-reviewer:latest
+        docker tag ai-code-reviewer ghcr.io/basheer6270/ai-code-reviewer:latest
+        docker push ghcr.io/basheer6270/ai-code-reviewer:latest
